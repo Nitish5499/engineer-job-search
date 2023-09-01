@@ -20,11 +20,54 @@ GREENHOUSE_API = 'https://api.greenhouse.io/v1/boards/{}/jobs'
 
 LEVER_API = 'https://jobs.lever.co/{}'
 
-KEYWORDS = ['Security', 'Privacy', 'Cybersecurity', 'Infosec', 'Red Team', 'Offensive']
+KEYWORDS = ['Intern',
+            'Internship',
+            'Summer 2024', 
+            'Summer']
+
+DENYLIST = ['Internal',
+            'International',]
+
+
+def rippling():
+    COMPANY = 'rippling'
+    API = 'https://www.rippling.com/careers/open-roles'
+
+    res = requests.get(API)
+    if res.status_code != 200:
+        print('Something wrong: {}'.format(res.content))
+        return
+    
+    soup = BeautifulSoup(res.content, 'html5lib')
+
+    if not soup.find('script', attrs = {'id':'__NEXT_DATA__'}):
+        return
+
+    raw_data = soup.find('script', attrs = {'id':'__NEXT_DATA__'}).contents[0]
+
+    jobs = json.loads(raw_data)['props']['pageProps']['jobs']
+
+    f = open('./data/{}.md'.format(COMPANY), 'a+') 
+
+    for job in jobs:
+        job_title = job['name']
+        job_url = job['url']
+
+        if any(word in job_title for word in KEYWORDS):
+
+            if any(word in job_title for word in DENYLIST):
+                continue
+
+            text_to_write = '{} - {}\n\n'.format(job_title, job_url)
+            f.write(text_to_write)
+            print(text_to_write)
+
+    f.close()
+    return     
 
 def pinterest():
     COMPANY = 'pinterest'
-    API = 'https://jobsapi-google.m-cloud.io/api/job/search?&pageSize=30&offset=0&companyName=companies%2F201fe4ec-50f6-4262-92bf-3f1779cdcc41&query=security&orderBy=relevance%20desc'
+    API = 'https://jobsapi-google.m-cloud.io/api/job/search?&pageSize=30&offset=0&companyName=companies%2F201fe4ec-50f6-4262-92bf-3f1779cdcc41&query=intern&orderBy=relevance%20desc'
 
     res = requests.get(API)
     if res.status_code != 200:
@@ -59,6 +102,10 @@ def snap():
 
     for job in listings['data']['Report_Entry']:
         if any(word in job['title'] for word in KEYWORDS):
+
+            if any(word in job['title'] for word in DENYLIST):
+                continue
+            
             job_title = job['title']
             job_url = job['absolute_url']
             
@@ -71,7 +118,7 @@ def snap():
 
 def block():
     COMPANY = 'block'
-    API = 'https://careers.smartrecruiters.com/Square/?search=security'
+    API = 'https://careers.smartrecruiters.com/Square/?search=intern'
 
     res = requests.get(API)
     if res.status_code != 200:
@@ -79,6 +126,10 @@ def block():
         return
 
     soup = BeautifulSoup(res.content, 'html5lib')
+
+    if not soup.find('ul', attrs = {'data-page':'0'}):
+        return
+
     raw_data = soup.find('ul', attrs = {'data-page':'0'}).contents
 
     f = open('./data/{}.md'.format(COMPANY), 'a+')
@@ -96,7 +147,7 @@ def block():
 
 def twitter():
     COMPANY = 'twitter'
-    API = 'https://careers.twitter.com/content/careers-twitter/en/roles.careers.search.json?q=security&location=careers-twitter%3Asr%2Foffice%2Fus%2Fwashington&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsunnyvale&location=careers-twitter%3Asr%2Foffice%2Fus%2Fseattle&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsan-jose&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsan-francisco&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsacramento&location=careers-twitter%3Asr%2Foffice%2Fus%2Fremote-us&location=careers-twitter%3Asr%2Foffice%2Fus%2Foakland&location=careers-twitter%3Asr%2Foffice%2Fus%2Fnew-york-city&location=careers-twitter%3Asr%2Foffice%2Fus%2Fmiami&location=careers-twitter%3Asr%2Foffice%2Fus%2Flos-angeles&location=careers-twitter%3Asr%2Foffice%2Fus%2Fhillsboro-dc&team=&offset=0&limit=50&sortBy=modified&asc=false'
+    API = 'https://careers.twitter.com/content/careers-twitter/en/roles.careers.search.json?q=intern&location=careers-twitter%3Asr%2Foffice%2Fus%2Fwashington&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsunnyvale&location=careers-twitter%3Asr%2Foffice%2Fus%2Fseattle&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsan-jose&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsan-francisco&location=careers-twitter%3Asr%2Foffice%2Fus%2Fsacramento&location=careers-twitter%3Asr%2Foffice%2Fus%2Fremote-us&location=careers-twitter%3Asr%2Foffice%2Fus%2Foakland&location=careers-twitter%3Asr%2Foffice%2Fus%2Fnew-york-city&location=careers-twitter%3Asr%2Foffice%2Fus%2Fmiami&location=careers-twitter%3Asr%2Foffice%2Fus%2Flos-angeles&location=careers-twitter%3Asr%2Foffice%2Fus%2Fhillsboro-dc&team=&offset=0&limit=50&sortBy=modified&asc=false'
 
     res = requests.get(API)
     if res.status_code != 200:
@@ -204,7 +255,7 @@ def uber():
 
 def servicenow():
     COMPANY = 'servicenow'
-    API = 'https://careers.smartrecruiters.com/ServiceNow/?search=security'
+    API = 'https://careers.smartrecruiters.com/ServiceNow/?search=intern'
 
     res = requests.get(API)
     if res.status_code != 200:
@@ -243,6 +294,10 @@ def spotify():
 
     for job in listings['result']:
         if any(word in job['text'] for word in KEYWORDS):
+            
+            if any(word in job['text'] for word in DENYLIST):
+                continue
+
             job_title = job['text']
             job_url = LISTING_URL.format(job['id'])
             
@@ -270,6 +325,10 @@ def lever(company):
     for data in raw_data:
         job_title = data.find('h5').contents[0]
         if any(word in job_title for word in KEYWORDS):
+
+            if any(word in job_title for word in DENYLIST):
+                continue
+            
             job_title = data.find('h5').contents[0]
             job_url = data.find('a')['href']
 
@@ -295,6 +354,10 @@ def greenhouse(company):
 
     for job in listings['jobs']:
         if any(word in job['title'] for word in KEYWORDS):
+            
+            if any(word in job['title'] for word in DENYLIST):
+                continue
+
             job_title = job['title']
             job_url = job['absolute_url']
             
@@ -314,6 +377,7 @@ if __name__ == '__main__':
         spotify,
         twitter,
         uber,
+        rippling
     ]
 
     greenhouse_companies = [
@@ -345,7 +409,6 @@ if __name__ == '__main__':
         'qualtrics', # greenhouse
         'reddit', # greenhouse
         'retool', # greenhouse
-        'rippling', # greenhouse
         'robinhood', # greenhouse
         'scaleai', # greenhouse
         'stripe', # greenhouse
@@ -373,3 +436,4 @@ if __name__ == '__main__':
     for company in greenhouse_companies:
         print_company_header(company)
         greenhouse(company)
+
