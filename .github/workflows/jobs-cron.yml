@@ -1,9 +1,7 @@
-on: workflow_dispatch
-  
-#sample cron job
-push:
-schedule:
-  - cron: "0 0 * * *"
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   scrape:
