@@ -6,5 +6,7 @@ Professional Sales Internship - https://www.qualtrics.com/careers/us/en/job/4663
 
 SkillBridge - Customer Success Associate Internship - https://www.qualtrics.com/careers/us/en/job/5042595?gh_jid=5042595
 
+Skillbridge Intern - Deal Desk Analyst - https://www.qualtrics.com/careers/us/en/job/5371737?gh_jid=5371737
+
 Skillbridge - Technical Account Manager Internship - https://www.qualtrics.com/careers/us/en/job/3436647?gh_jid=3436647
 
