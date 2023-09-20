@@ -2,6 +2,8 @@ Electrical Engineer Intern- Summer 2024 - https://jobs.lever.co/anduril/46f63b2e
 
 Electrical Systems Engineer Intern- Summer 2024 - https://jobs.lever.co/anduril/865bccb3-a0ee-40d2-aeeb-9b70daff070f
 
+Electrical Test Engineer Intern- Summer 2024 - https://jobs.lever.co/anduril/fdf5c24f-e347-437d-ac84-f34a78557db0
+
 Mechanical Engineer Intern- Summer 2024 - https://jobs.lever.co/anduril/9abc4821-eb06-4913-a51c-9d963571600e
 
 Robotics Software Engineer Intern - Summer 2024 - https://jobs.lever.co/anduril/c0344170-e984-49d7-b3e7-42be89775006

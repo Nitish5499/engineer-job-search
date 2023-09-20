@@ -1,3 +1,7 @@
+Hardware Engineer (Summer Co-op) - https://jobs.lever.co/verkada/7d6e5cec-943f-4f23-91e6-c988381a48d4
+
+Product Design Mechanical Engineer (Summer Co-Op) - https://jobs.lever.co/verkada/9cc4c88d-72db-41c2-ad92-cbfef9ee67b1
+
 Android Engineering Intern - Summer 2024 - https://jobs.lever.co/verkada/ad8e440d-5eec-495f-b5bc-6c9cd36f0561
 
 iOS Engineering Intern - Summer 2024 - https://jobs.lever.co/verkada/f8bf2f92-162e-497e-a42f-a849b4e5dfb2
