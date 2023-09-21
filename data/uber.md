@@ -4,5 +4,3 @@ Security Manager II, Trusted Identity & Access Management - https://www.uber.com
 
 Senior Security Engineer - https://www.uber.com/global/en/careers/list/123876/
 
-Sr Software Engineer - PKI - https://www.uber.com/global/en/careers/list/121027/
-
