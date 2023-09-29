@@ -4,5 +4,3 @@ Sr Software Engineer, Application Security - https://www.uber.com/global/en/care
 
 Security Manager II, Trusted Identity & Access Management - https://www.uber.com/global/en/careers/list/122346/
 
-Senior Security Engineer - https://www.uber.com/global/en/careers/list/123876/
-
