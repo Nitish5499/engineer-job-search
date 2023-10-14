@@ -8,5 +8,7 @@ Mechanical Engineer Intern- Summer 2024 - https://jobs.lever.co/anduril/9abc4821
 
 Robotics Software Engineer Intern - Summer 2024 - https://jobs.lever.co/anduril/c0344170-e984-49d7-b3e7-42be89775006
 
+Frontend Software Engineer Intern - Summer 2024 - https://jobs.lever.co/anduril/2a846dbf-9395-46c1-905a-d5870dd06f1c
+
 Software Engineer Intern - Summer 2024 - https://jobs.lever.co/anduril/678e291a-29a7-4823-9bef-5a565660d67e
 

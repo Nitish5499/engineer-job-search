@@ -10,8 +10,6 @@ Masters Machine Learning Internship 2024 (USA) - https://www.pinterestcareers.co
 
 Pinterest Labs Research Internship 2024 (USA) - https://www.pinterestcareers.com/job/19171741/pinterest-labs-research-internship-2024-usa-singapore-sg/
 
-Data Scientist II. - https://www.pinterestcareers.com/job/18804068/data-scientist-ii-toronto-ca/
-
 University Grad Software Engineer (USA) - https://www.pinterestcareers.com/job/19172539/university-grad-software-engineer-usa-singapore-sg/
 
 University Grad Software Engineer (Palo Alto) - https://www.pinterestcareers.com/job/19172544/university-grad-software-engineer-palo-alto-palo-alto-ca/
